@@ -188,6 +188,9 @@ function nirvana_breadcrumbs() {
 	$before = '<span class="current">'; 				// tag before the current crumb
 	$after = '</span>'; 								// tag after the current crumb
 
+	global $post;
+	$homeLink = esc_url( home_url() );
+	
 	// woocommerce sections display their own breadcrumbs
 	if ( function_exists('woocommerce_breadcrumb') && is_woocommerce() ){
 		$args = array(
@@ -202,8 +205,6 @@ function nirvana_breadcrumbs() {
 		return;
 	};
 
-	global $post;
-	$homeLink = esc_url( home_url() );
 	if ( is_front_page() && is_home() ) {
 		// default homepage
 
@@ -218,7 +219,7 @@ function nirvana_breadcrumbs() {
 	} elseif ( is_home() ){
 		// blog page
 
-		if ($showOnHome == 1) echo '<div id="breadcrumbs"><div id="breadcrumbs-box">' . $home . $separator .  get_the_title( get_option('page_for_posts', true) ) . '</div></div>';
+		echo '<div id="breadcrumbs"><div id="breadcrumbs-box">' . $home . $separator .  get_the_title( get_option('page_for_posts', true) ) . '</div></div>';
 
 	} else {
 		// everything else
@@ -530,109 +531,5 @@ function nirvana_wp_body_open() {
     do_action( 'wp_body_open' );
 }
 add_action( 'cryout_body_hook', 'nirvana_wp_body_open', 5 );
-
-
-/**
- **** HELPER FUNCTIONS ****
- */
-
-/**
- * Checks if a give variable is set to any of possible values
- */
-function cryout_optset($var,$val1,$val2='',$val3='',$val4=''){
-	$vals = array($val1,$val2,$val3,$val4);
-	if (in_array($var,$vals)): return false; else: return true; endif;
-} // cryout_optset()
-
-/**
- * Font name cleanup for style output
- */
-function cryout_fontname_cleanup( $fontid ) {
-    // do not process non font ids
-    if ( strtolower(trim($fontid)) == 'general font' ) return $fontid;
-	// do not process local embeds
-    if ( strtolower(trim($fontid)) == 'custom local font' ) return $fontid;
-    $fontid = trim($fontid);
-    $fonts = @explode(",", $fontid);
-    // split multifont ids into fonts array
-    if (is_array($fonts)){
-        foreach ($fonts as &$font) {
-            $font = trim($font);
-            // if font has space in name, quote it
-            if (strpos($font,' ')>-1) $font = '"' . $font . '"';
-        };
-        return implode(', ',$fonts);
-    } elseif (strpos($fontid,' ')>-1) {
-        // if font has space in name, quote it
-        return '"' . $fontid . '"';
-    } else return $fontid;
-} // cryout_fontname_cleanup
-
-/**
- * Basic HEX to RGB color code converter
- */
-function cryout_hex2rgb($hex) {
-   $hex = str_replace("#", "", $hex);
-   if (preg_match("/^([a-f0-9]{3}|[a-f0-9]{6})$/i",$hex)):
-        if(strlen($hex) == 3) {
-           $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-           $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-           $b = hexdec(substr($hex,2,1).substr($hex,2,1));
-        } else {
-           $r = hexdec(substr($hex,0,2));
-           $g = hexdec(substr($hex,2,2));
-           $b = hexdec(substr($hex,4,2));
-        }
-        $rgb = array($r, $g, $b);
-        return implode(",", $rgb); // returns the rgb values separated by commas
-   else: return "";  // input string is not a valid hex color code
-   endif;
-} // cryout_hex2rgb()
-
-/**
- * HEX color code diff calculator
- */
-function cryout_hexadder($hex,$inc) {
-   $hex = str_replace("#", "", $hex);
-   if (preg_match("/^([a-f0-9]{3}|[a-f0-9]{6})$/i",$hex)):
-        if(strlen($hex) == 3) {
-           $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-           $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-           $b = hexdec(substr($hex,2,1).substr($hex,2,1));
-        } else {
-           $r = hexdec(substr($hex,0,2));
-           $g = hexdec(substr($hex,2,2));
-           $b = hexdec(substr($hex,4,2));
-        }
-
-		$rgb_array = array($r,$g,$b);
-		$newhex="#";
-		foreach ($rgb_array as $el) {
-			$el+=$inc;
-			if ($el<=0) { $el='00'; }
-			elseif ($el>=255) {$el='ff';}
-			else {$el=dechex($el);}
-			if(strlen($el)==1)  {$el='0'.$el;}
-			$newhex.=$el;
-		}
-		return $newhex;
-   else: return "";  // input string is not a valid hex color code
-   endif;
-} // cryout_hexadder()
-
-/**
- * Google font identifier cleanup
- */
-function cryout_gfontclean( $gfont, $mode = 1 ) {
-	switch ($mode) {
-		case 2: // for custom styling
-			return esc_attr(str_replace('+',' ',preg_replace('/[:&].*/','',$gfont)));
-		break;
-		case 1: // for font enqueuing
-		default:
-			return esc_attr(preg_replace( '/\s+/', '+',$gfont));
-		break;
-	} // switch
-} // cryout_gfontcleanup()
 
 // FIN

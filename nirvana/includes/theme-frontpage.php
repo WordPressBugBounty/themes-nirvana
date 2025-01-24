@@ -76,6 +76,7 @@ function nirvana_ppslider() {
 				   if ( $custom_query->have_posts() ) while ($custom_query->have_posts()) :
 						$custom_query->the_post();
 						$img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ),'slider');
+						if (false === $img) continue; // skip posts that don't have featured images set
 						$slide['image'] = esc_url( $img[0] );
 						$slide['link'] = esc_url( get_permalink() );
 						$slide['title'] = get_the_title();

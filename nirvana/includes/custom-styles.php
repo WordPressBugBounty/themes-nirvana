@@ -144,19 +144,19 @@ $nirvana_headingsfont = cryout_fontname_cleanup($nirvana_headingsfont);
 body { 	font-family: <?php echo (empty($nirvana_googlefont)?$nirvana_fontfamily:sprintf('"%s"', $nirvana_googlefont)); ?>; }
 #content h1.entry-title a, #content h2.entry-title a,
 #content h1.entry-title, #content h2.entry-title {
-		font-family: <?php echo (empty($nirvana_googlefonttitle)?str_replace('General Font', 'inherit', $nirvana_fonttitle):sprintf('"%s"', $nirvana_googlefonttitle)); ?>; }
+		font-family: <?php echo (empty($nirvana_googlefonttitle)?str_replace('font-general', 'inherit', $nirvana_fonttitle):sprintf('"%s"', $nirvana_googlefonttitle)); ?>; }
 .widget-title, .widget-title a {
 		line-height: normal;
-		font-family: <?php echo (empty($nirvana_googlefontside)?str_replace('General Font', 'inherit', $nirvana_fontside):sprintf('"%s"', $nirvana_googlefontside)); ?>; }
+		font-family: <?php echo (empty($nirvana_googlefontside)?str_replace('font-general', 'inherit', $nirvana_fontside):sprintf('"%s"', $nirvana_googlefontside)); ?>; }
 .widget-container, .widget-container a {
-		font-family: <?php echo (empty($nirvana_googlefontwidget)?str_replace('General Font', 'inherit', $nirvana_fontwidget):sprintf('"%s"', $nirvana_googlefontwidget)); ?>; }
+		font-family: <?php echo (empty($nirvana_googlefontwidget)?str_replace('font-general', 'inherit', $nirvana_fontwidget):sprintf('"%s"', $nirvana_googlefontwidget)); ?>; }
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6,
 .nivo-caption h2, #front-text1 h1, #front-text2 h1, h3.column-header-image, #comments #reply-title {
-		font-family: <?php echo (empty($nirvana_headingsgooglefont)?str_replace('General Font', 'inherit', $nirvana_headingsfont):sprintf('"%s"', $nirvana_headingsgooglefont)); ?>; }
+		font-family: <?php echo (empty($nirvana_headingsgooglefont)?str_replace('font-general', 'inherit', $nirvana_headingsfont):sprintf('"%s"', $nirvana_headingsgooglefont)); ?>; }
 #site-title span a {
-		font-family: <?php echo (empty($nirvana_sitetitlegooglefont)?str_replace('General Font', 'inherit', $nirvana_sitetitlefont):sprintf('"%s"', $nirvana_sitetitlegooglefont)); ?>; }
+		font-family: <?php echo (empty($nirvana_sitetitlegooglefont)?str_replace('font-general', 'inherit', $nirvana_sitetitlefont):sprintf('"%s"', $nirvana_sitetitlegooglefont)); ?>; }
 #access ul li a, #access ul li a span {
-		font-family: <?php echo (empty($nirvana_menugooglefont)?str_replace('General Font', 'inherit', $nirvana_menufont):sprintf('"%s"', $nirvana_menugooglefont)); ?>; }
+		font-family: <?php echo (empty($nirvana_menugooglefont)?str_replace('font-general', 'inherit', $nirvana_menufont):sprintf('"%s"', $nirvana_menugooglefont)); ?>; }
 <?php
 
 

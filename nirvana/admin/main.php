@@ -25,6 +25,7 @@ function nirvana_get_theme_options() {
 		nirvana_get_option_defaults()
 	);
 	$optionsNirvana['id'] = "nirvana_settings";
+	$optionsNirvana = nirvana_maybe_migrate_options( $optionsNirvana );
 	return $optionsNirvana;
 }
 
@@ -35,6 +36,15 @@ $nirvanas = nirvana_get_theme_options();
 //add_action('admin_init', 'nirvana_init_fn' ); // hooked by settings plugin
 add_action('admin_menu', 'nirvana_add_page_fn');
 add_action('init', 'nirvana_init');
+
+// Graceful handling of options that change built-in values
+function nirvana_maybe_migrate_options($options_array) {
+	// changes in 1.6.4
+	foreach ( array( 'nirvana_fonttitle', 'nirvana_fontside', 'nirvana_headingsfont', 'nirvana_sitetitlefont', 'nirvana_menufont', 'nirvana_fontwidget' ) as $opt_id ) {
+		if ($options_array[$opt_id] == 'General Font') $options_array[$opt_id] = 'font-general';
+	}
+	return $options_array;
+}
 
 // Register and enqueue all scripts and styles for the init hook
 function nirvana_init() {
@@ -314,19 +324,6 @@ function nirvana_page_fn() {
 							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 						</form>
 					</div>
-					<p>Or socially smother, caress and embrace us:</p>
-					<div class="social-buttons">
-						<a href="https://www.facebook.com/cryoutcreations" target="_blank" title="Follow us on Facebook">
-							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/images/icon-facebook.png' ?>" alt="Facebook">
-						</a>
-						<a href="https://twitter.com/cryoutcreations" target="_blank" title="Follow us on Twitter">
-							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/images/icon-twitter.png' ?>" alt="Twitter">
-						</a>
-						<a href="https://profiles.wordpress.org/cryout-creations/" target="_blank" title="Check out our WordPress.org creations">
-							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/images/icon-wporg.png' ?>" alt="WordPress.org">
-				</a>
-					</div>
-
 				</div><!-- inside -->
 			</div><!-- donate -->
 			

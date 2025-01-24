@@ -33,11 +33,11 @@ get_header();?>
 							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'nirvana_author_bio_avatar_size', 80 ) ); ?>
 						</div><!-- #author-avatar -->
 						<div id="author-description">
-							<h2><?php echo __('About','nirvana').' '.esc_attr( get_the_author() ); ?></h2>
+							<h2><?php echo __('About','nirvana') . ' ' . esc_attr( get_the_author() ); ?></h2>
 							<?php the_author_meta( 'description' ); ?>
 							<div id="author-link">
 								<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-									<?php printf( __( 'View all posts by ','nirvana').'%s <span class="meta-nav">&rarr;</span>', get_the_author() ); ?>
+									<?php printf( __( 'View all posts by ','nirvana').'%s <span class="meta-nav">&rarr;</span>', esc_attr( get_the_author() ) ); ?>
 								</a>
 							</div><!-- #author-link	-->
 						</div><!-- #author-description -->

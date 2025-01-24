@@ -1,11 +1,11 @@
 =============
 Nirvana WordPress Theme
-Copyright 2014-2021 Cryout Creations
+Copyright 2014-2025 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.5
-Tested up to: 6.4
-Stable tag: 1.6.3
+Tested up to: 6.7
+Stable tag: 1.6.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -118,16 +118,23 @@ For current translation contributors, see https://translate.wordpress.org/projec
 
 == Changelog ==
 
+= 1.6.4 =
+* Added new social icons: Bluesky, Mastodon and X
+* Fixed XSS vulnerability allowing the output of unsanitized user names set by rogue editors/contributors - reported by stealthcopter on patchstack.com
+* Fixed PHP 8.2+ deprecation notice about using ${var}
+* Fixed "general font" selection issues on localized sites and improved locally embedded fonts support
+* Removed obsolete social icons: GooglePlus, Steam-old, Twitter-old, Youtube-old
+
 = 1.6.3 =
-* Added support for using locally embedded fonts for site elements
+* Added draft support for using locally embedded fonts for site elements
 * Improved alignment of captioned block images
-* Improved breadcrumbs section detection to fix invalid dreadcrumbs on non-home blog page
+* Improved breadcrumbs section detection to fix invalid breadcrumbs on non-home blog page
 * Improved spacing consistency for 'read more' button between presentation page and other site sections
-* Improved handling of posts without featured images when generating the presentation page posts-based slider
+* Improved handling of posts without featured images when generating the presentation page posts-based columns
 * Fixed non-functioning linking on captioned block images due to caption paragraph overlap
 * Fixed content container padding on custom post types (like bbPress forums)
 * Fixed a CSS parsing error in the inline options-generated styling
-* (Hopefully) fixed undefined index WP_Widget_Recent_Comments in theme-comments.php on line 74 with WP CLI
+* (Hopefully) fixed undefined index WP_Widget_Recent_Comments in theme-comments.php with WP CLI
 
 = 1.6.2 =
 * Fixed missing Fitvids conditionality check causing videos to be enlarged on desktop browsers as well 

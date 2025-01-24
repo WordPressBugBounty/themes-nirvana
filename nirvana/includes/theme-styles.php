@@ -17,39 +17,39 @@ function nirvana_enqueue_styles() {
 
 	/* Google fonts */
 	$gfonts = array();
-	$customid = 'Custom Local Font';
-	if (($nirvana_fontfamily != $customid) && !empty($nirvana_googlefont)) 				$gfonts[] = cryout_gfontclean( $nirvana_googlefont );
-	if (($nirvana_fonttitle != $customid) && !empty($nirvana_googlefonttitle)) 			$gfonts[] = cryout_gfontclean( $nirvana_googlefonttitle );
-	if (($nirvana_fontside != $customid) && !empty($nirvana_googlefontside)) 			$gfonts[] = cryout_gfontclean( $nirvana_googlefontside );
-	if (($nirvana_fontwidget != $customid) && !empty($nirvana_googlefontwidget)) 		$gfonts[] = cryout_gfontclean( $nirvana_googlefontwidget );
-	if (($nirvana_sitetitlefont != $customid) && !empty($nirvana_sitetitlegooglefont))	$gfonts[] = cryout_gfontclean( $nirvana_sitetitlegooglefont );
-	if (($nirvana_menufont != $customid) && !empty($nirvana_menugooglefont)) 			$gfonts[] = cryout_gfontclean( $nirvana_menugooglefont );
-	if (($nirvana_headingsfont != $customid) && !empty($nirvana_headingsgooglefont))	$gfonts[] = cryout_gfontclean( $nirvana_headingsgooglefont );
+
+	if ( ( $nirvana_fontfamily != 'font-custom' ) && !empty( $nirvana_googlefont ) )			$gfonts[] = cryout_gfontclean( $nirvana_googlefont );
+	if ( ( $nirvana_fonttitle != 'font-custom' ) && !empty( $nirvana_googlefonttitle ) )		$gfonts[] = cryout_gfontclean( $nirvana_googlefonttitle );
+	if ( ( $nirvana_fontside != 'font-custom' ) && !empty( $nirvana_googlefontside ) )				$gfonts[] = cryout_gfontclean( $nirvana_googlefontside );
+	if ( ( $nirvana_fontwidget != 'font-custom' ) && !empty( $nirvana_googlefontwidget ) )			$gfonts[] = cryout_gfontclean( $nirvana_googlefontwidget );
+	if ( ( $nirvana_sitetitlefont != 'font-custom' ) && !empty( $nirvana_sitetitlegooglefont ) )	$gfonts[] = cryout_gfontclean( $nirvana_sitetitlegooglefont );
+	if ( ( $nirvana_menufont != 'font-custom' ) && !empty( $nirvana_menugooglefont ) )				$gfonts[] = cryout_gfontclean( $nirvana_menugooglefont );
+	if ( ( $nirvana_headingsfont != 'font-custom' ) && !empty( $nirvana_headingsgooglefont ) )		$gfonts[] = cryout_gfontclean( $nirvana_headingsgooglefont );
 
 	// enqueue fonts with subsets separately
-	foreach($gfonts as $i=>$gfont):
-		if (strpos($gfont,"&") !== false):
+	foreach ( $gfonts as $i=>$gfont ) {
+		if (strpos($gfont,"&") !== false) {
 			wp_enqueue_style( 'nirvana-googlefont_'.$i, '//fonts.googleapis.com/css?family=' . $gfont );
 			unset($gfonts[$i]);
-		endif;
-	endforeach;
+		}
+	} // foreach;
 
 	// merged google fonts
-	if ( count($gfonts)>0 ):
-		wp_enqueue_style( 'nirvana-googlefonts', '//fonts.googleapis.com/css?family=' . implode( "|" , array_unique($gfonts) ), array(), null, 'screen' ); // google fonts
-	endif;
+	if ( count($gfonts)>0 ) {
+		wp_enqueue_style( 'nirvana-googlefonts', '//fonts.googleapis.com/css?family=' . implode( "|" , array_unique($gfonts) ), array(), null, 'screen' ); // google font
+	};
 
 	// Main theme style
 	wp_enqueue_style( 'nirvana-style', get_stylesheet_uri(), NULL, _CRYOUT_THEME_VERSION ); // main style.css
 	
 	// Options-based generated styling
  	wp_add_inline_style( 'nirvana-style', preg_replace( "/[\n\r\t\s]+/", " ", nirvana_custom_styles() ) ); // includes/custom-styles.php
-	
+
 	// Presentation Page options-based styling (only used when needed)
 	if ( ($nirvana_frontpage=="Enable") && is_front_page() && ('posts' == get_option( 'show_on_front' )) ) {
-	    wp_add_inline_style( 'nirvana-style', preg_replace( "/[\n\r\t\s]+/", " ", nirvana_presentation_css() ) ); // also in includes/custom-styles.php
+		wp_add_inline_style( 'nirvana-style', preg_replace( "/[\n\r\t\s]+/", " ", nirvana_presentation_css() ) ); // also in includes/custom-styles.php
 	}
-	
+
 	// RTL support
 	if ( is_rtl() ) wp_enqueue_style( 'nirvana-rtl', get_template_directory_uri() . '/styles/rtl.css', NULL, _CRYOUT_THEME_VERSION );	
 	
@@ -87,7 +87,6 @@ function nirvana_scripts_method() {
 	}
 	
 	$js_options = array(
-		//'masonry' => $nirvana_masonry,
 		'mobile' => ( ($nirvanas['nirvana_mobile']=='Enable') ? 1 : 0 ),
 		'fitvids' => $nirvanas['nirvana_fitvids'],
 		'contentwidth' => $nirvanas['nirvana_sidewidth'],
@@ -98,7 +97,7 @@ function nirvana_scripts_method() {
 	// Support sites with threaded comments (when in use)
 	if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
-}
+} // nirvana_scripts_method()
 if ( !is_admin() ) add_action( 'wp_enqueue_scripts', 'nirvana_scripts_method' );
 
 /**

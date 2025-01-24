@@ -6,9 +6,7 @@
  * @subpackage Functions
  */
 
-// site width
-$nirvana_totalSize = $nirvanas['nirvana_sidebar'] + $nirvanas['nirvana_sidewidth'];
-
+// $nirvana_totalSize removed in 1.6.4 to avoid #329219
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -22,6 +20,7 @@ if ( ! isset( $content_width ) )
 
 /** Tell WordPress to run nirvana_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'nirvana_setup' );
+
 
 
 /**
@@ -84,7 +83,7 @@ function nirvana_setup() {
 
 	$nirvanas['nirvana_hheight'] = (int)$nirvanas['nirvana_hheight'];
 	//set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-	add_image_size( 'header', $nirvana_totalSize, $nirvanas['nirvana_hheight'], apply_filters( 'nirvana_header_crop', true ) );
+	add_image_size( 'header', intval($nirvanas['nirvana_sidebar'] + $nirvanas['nirvana_sidewidth']), $nirvanas['nirvana_hheight'], apply_filters( 'nirvana_header_crop', true ) );
 
 	add_image_size( 'slider', $nirvanas['nirvana_fpsliderwidth'], $nirvanas['nirvana_fpsliderheight'], true );
 	add_image_size( 'columns', $nirvanas['nirvana_colimagewidth'], $nirvanas['nirvana_colimageheight'], true );
@@ -101,7 +100,7 @@ function nirvana_setup() {
 		'flex-height' 	=> true,
 		'height' 		=> $nirvanas['nirvana_hheight'],
 		'flex-width' 	=> true,
-		'width' 		=> $nirvana_totalSize,
+		'width' 		=> intval($nirvanas['nirvana_sidebar'] + $nirvanas['nirvana_sidewidth']),
 		'max-width' 	=> 1920,
 		'default-image' => '',
 	);

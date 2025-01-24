@@ -645,7 +645,7 @@ function cryout_setting_fonttitle_fn() {
 function cryout_setting_fontside_fn() {
 	global $nirvanas;
 	global $nirvana_fonts;
-	for ($i=14;$i<31;$i+=2): $sizes[] = "${i}px"; endfor;
+	for ($i=14;$i<31;$i+=2): $sizes[] = "{$i}px"; endfor;
 	cryout_proto_font(
 		$nirvana_fonts,
 		$sizes,
@@ -664,7 +664,7 @@ function cryout_setting_fontside_fn() {
 function cryout_setting_fontwidget_fn() {
 	global $nirvanas;
 	global $nirvana_fonts;
-	for ($i=12;$i<23;$i+=1): $sizes[] = "${i}px"; endfor;
+	for ($i=12;$i<23;$i+=1): $sizes[] = "{$i}px"; endfor;
 	cryout_proto_font(
 		$nirvana_fonts,
 		$sizes,
@@ -683,7 +683,7 @@ function cryout_setting_fontwidget_fn() {
 function cryout_setting_sitetitlefont_fn() {
 	global $nirvanas;
 	global $nirvana_fonts;
-	for ($i=30;$i<51;$i+=2): $sizes[] = "${i}px"; endfor;
+	for ($i=30;$i<51;$i+=2): $sizes[] = "{$i}px"; endfor;
 	cryout_proto_font(
 		$nirvana_fonts,
 		$sizes,

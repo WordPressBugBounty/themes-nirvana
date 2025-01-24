@@ -1,7 +1,7 @@
 <?php
 
 // master function used for displaying font family / gfont / size selectors
-function cryout_proto_font($fonts,$sizes,$size,$font,$gfont,$labelsize,$labelfont,$labelgfont,$general="General Font",$custom="Custom Local Font"){ ?>
+function cryout_proto_font($fonts,$sizes,$size,$font,$gfont,$labelsize,$labelfont,$labelgfont,$general="",$custom=""){ ?>
 	<?php if ($size>0): ?>
 	<select id='<?php echo $labelsize; ?>' name='nirvana_settings[<?php echo $labelsize; ?>]' class='fontsizeselect'>
 	<?php foreach($sizes as $item): ?>
@@ -13,8 +13,8 @@ function cryout_proto_font($fonts,$sizes,$size,$font,$gfont,$labelsize,$labelfon
 	<select id='<?php echo $labelfont; ?>' class='admin-fonts fontnameselect' name='nirvana_settings[<?php echo $labelfont; ?>]'>
 	<?php if ( !empty($general) || !empty($custom) ) { ?>
 		<optgroup>
-			<?php if (!empty($general)) { ?><option value="<?php echo $general; ?>" <?php selected($font,$general); ?>><?php echo $general; ?></option><?php } ?>
-			<?php if (!empty($custom)) { ?><option value="<?php echo $custom; ?>" <?php selected($font,$custom); ?>><?php echo $custom; ?></option><?php } ?>
+			<?php if (!empty($general)) { ?><option value="font-general" <?php selected($font,'font-general'); ?>><?php echo $general; ?></option><?php } ?>
+			<?php if (!empty($custom)) { ?><option value="font-custom" <?php selected($font,'font-custom'); ?>><?php echo $custom; ?></option><?php } ?>
 		</optgroup>
 	<?php }
 	foreach ($fonts as $fgroup => $fsubs): ?>
@@ -54,12 +54,12 @@ function cryout_proto_field($settings,$type,$name,$values,$labels='',$cls='',$ec
 	endif;
 	switch ($type):
 		case "checkbox": 
-			$data = "<input value='1' id='$name' name='${settings['id']}[$name]' type='checkbox' ".checked($values,'1',0). " class='$cls'/> ".
+			$data = "<input value='1' id='$name' name='{$settings['id']}[$name]' type='checkbox' ".checked($values,'1',0). " class='$cls'/> ".
 			$data .= "<label for='$name' class='socialsdisplay'>";
 			$data .= $labels." </label>\n";
 		break; 
 		case "select": 
-			$data = "<select id='$name' name='${settings['id']}[$name]' class='$cls'>";
+			$data = "<select id='$name' name='{$settings['id']}[$name]' class='$cls'>";
 			foreach($values as $id => $val):
 				$data .= "<option value='$val'".selected($settings[$name],$val,false).">$labels[$id]</option>";
 			endforeach;
@@ -70,7 +70,7 @@ function cryout_proto_field($settings,$type,$name,$values,$labels='',$cls='',$ec
 		break;	
 		case "input":
 		default:    
-			$data = "<input id='$name' name='${settings['id']}[$name]' size='$len' type='text' value='";
+			$data = "<input id='$name' name='{$settings['id']}[$name]' size='$len' type='text' value='";
 			switch ($san): 
 				case "url": $data .= esc_url( $settings[$name] ); break; 
 				case "int": $data .= intval(esc_attr( $settings[$name] )); break; 
@@ -104,5 +104,98 @@ function cryout_proto_arrsan($data){
 	endforeach;
 	return $filtered;
 } //cryout_proto_arrsan()
+
+/**
+ * Google font identifier cleanup
+ */
+function cryout_gfontclean( $gfont, $mode = 1 ) {
+	switch ($mode) {
+		case 2: // for custom styling
+			return esc_attr(str_replace('+',' ',preg_replace('/[:&].*/','',$gfont)));
+		break;
+		case 1: // for font enqueuing
+		default:
+			return esc_attr(preg_replace( '/\s+/', '+',$gfont));
+		break;
+	} // switch
+} // cryout_gfontcleanup()
+
+////////// HELPER FUNCTIONS //////////
+
+/**
+ * Checks if a give variable is set to any of possible values
+ */
+function cryout_optset($var,$val1,$val2='',$val3='',$val4=''){
+	$vals = array($val1,$val2,$val3,$val4);
+	if (in_array($var,$vals)): return false; else: return true; endif;
+} // cryout_optset()
+
+/**
+ * Font name cleanup for style output
+ */
+function cryout_fontname_cleanup( $fontid ) {
+    // do not process non font ids
+    if ( ( trim($fontid) == 'font-general') || (strtolower(trim($fontid)) == 'general font') ) return $fontid;
+    $fontid = trim($fontid);
+    $fonts = @explode(",", $fontid);
+    // split multifont ids into fonts array
+    if (is_array($fonts)){
+        foreach ($fonts as &$font) {
+            $font = trim($font);
+            // if font has space in name, quote it
+            if (strpos($font,' ')>-1) $font = '"' . $font . '"';
+        };
+        return implode(', ',$fonts);
+    } elseif (strpos($fontid,' ')>-1) {
+        // if font has space in name, quote it
+        return '"' . $fontid . '"';
+    } else return $fontid;
+} // cryout_fontname_cleanup
+
+function cryout_hex2rgb($hex) {
+   $hex = str_replace("#", "", $hex);
+   if (preg_match("/^([a-f0-9]{3}|[a-f0-9]{6})$/i",$hex)):
+        if(strlen($hex) == 3) {
+           $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+           $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+           $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+        } else {
+           $r = hexdec(substr($hex,0,2));
+           $g = hexdec(substr($hex,2,2));
+           $b = hexdec(substr($hex,4,2));
+        }
+        $rgb = array($r, $g, $b);
+        return implode(",", $rgb); // returns the rgb values separated by commas
+   else: return "";  // input string is not a valid hex color code
+   endif;
+} // cryout_hex2rgb()
+
+function cryout_hexadder($hex,$inc) {
+   $hex = str_replace("#", "", $hex);
+   if (preg_match("/^([a-f0-9]{3}|[a-f0-9]{6})$/i",$hex)):
+        if(strlen($hex) == 3) {
+           $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+           $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+           $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+        } else {
+           $r = hexdec(substr($hex,0,2));
+           $g = hexdec(substr($hex,2,2));
+           $b = hexdec(substr($hex,4,2));
+        }
+
+		$rgb_array = array($r,$g,$b);
+		$newhex="#";
+		foreach ($rgb_array as $el) {
+			$el+=$inc;
+			if ($el<=0) { $el='00'; }
+			elseif ($el>=255) {$el='ff';}
+			else {$el=dechex($el);}
+			if(strlen($el)==1)  {$el='0'.$el;}
+			$newhex.=$el;
+		}
+		return $newhex;
+   else: return "";  // input string is not a valid hex color code
+   endif;
+} // cryout_hexadder()
 
 // FIN

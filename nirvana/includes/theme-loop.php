@@ -155,8 +155,8 @@ function nirvana_meta_before() {
 		$output .= sprintf( '<span class="author vcard" ><i class="crycon-author crycon-metas" title="'.__( 'Author ','nirvana'). '"></i>
 				<a class="url fn n" rel="author" href="%1$s" title="%2$s">%3$s</a></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				sprintf( esc_attr( __( 'View all posts by %s', 'nirvana' ) ), get_the_author() ),
-				get_the_author()
+				sprintf( esc_attr( __( 'View all posts by %s', 'nirvana' ) ), esc_attr( get_the_author() ) ),
+				esc_attr( get_the_author() )
 		);
 	}
 

@@ -73,14 +73,14 @@ $nirvana_fonts = array(
 
 /* Social media links */
 $nirvana_socialNetworks = array (
-		"AboutMe", "AIM", "Amazon", "Contact", "Delicious", "DeviantArt", 
+		"AboutMe", "AIM", "Amazon", "Bluesky", "Contact", "Delicious", "DeviantArt", 
 		"Digg", "Discord", "Dribbble", "Etsy", "Facebook", "Flickr",
-		"FriendFeed", "Github", "GoodReads", "GooglePlus", "IMDb", "Instagram",
-		"LastFM", "LinkedIn", "Mail", "MindVox", "MySpace", "Newsvine", "Patreon", 
+		"FriendFeed", "Github", "GoodReads", "IMDb", "Instagram",
+		"LastFM", "LinkedIn", "Mail", "Mastodon", "MindVox", "MySpace", "Newsvine", "Patreon", 
 		"PayPal", "Phone", "Picasa", "Pinterest", "Reddit", "RSS", "ShareThis",  
-		"Skype", "Steam", "Steam-old", "SoundCloud", "StumbleUpon", "Technorati", 
-		"TripAdvisor", "Tumblr",  "Twitch", "Twitter", "Twitter-old", "Vimeo", "VK",
-		"WordPress", "Yahoo", "Yelp", "YouTube", "YouTube-old", "Xing",
+		"Skype", "Steam", "SoundCloud", "StumbleUpon", "Technorati", 
+		"TripAdvisor", "Tumblr",  "Twitch", "Twitter", "Vimeo", "VK",
+		"WordPress", "Yahoo", "Yelp", "YouTube", "X", "Xing",
 );
 
 /*

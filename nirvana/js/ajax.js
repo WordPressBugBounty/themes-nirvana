@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 	/**
 	 * Load new posts when the link is clicked.
 	 */
-	$('#cryout_ajax_more_trigger').click(function() {
+	$('#cryout_ajax_more_trigger').on('click',function() {
 	    /* Loading gif */
 		$(this).addClass('cryout_click_loading');
 		
