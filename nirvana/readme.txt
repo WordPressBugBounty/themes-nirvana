@@ -1,11 +1,11 @@
 =============
 Nirvana WordPress Theme
-Copyright 2014-2025 Cryout Creations
+Copyright 2014-2026 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.5
-Tested up to: 6.7
-Stable tag: 1.6.4
+Tested up to: 6.9
+Stable tag: 1.6.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -117,6 +117,13 @@ For current translation contributors, see https://translate.wordpress.org/projec
 
 
 == Changelog ==
+
+= 1.6.5 =
+* Fixed '_load_textdomain_just_in_time() was called incorrectly' notice introduced by WordPress 6.7
+* Fixed missing list bullets in blocks
+* Changed footer links to be protocol agnostic and avoid warnings from automated quality check tools
+* Bumped compatibility with WordPress 6.9
+* Removed legacy eot and svg bundled font formats to reduce theme size
 
 = 1.6.4 =
 * Added new social icons: Bluesky, Mastodon and X

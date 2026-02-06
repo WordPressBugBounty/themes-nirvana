@@ -411,8 +411,8 @@ add_filter( 'wp_link_pages_args','nirvana_nextpage_links' );
  */
 function nirvana_site_info() { ?>
 	<em style="display:table;margin:0 auto;float:none;text-align:center;padding:7px 0;font-size:13px;">
-	<?php _e('Powered by','nirvana')?> <a target="_blank" href="<?php echo 'http://www.cryoutcreations.eu';?>" title="<?php echo 'Nirvana Theme by '. 'Cryout Creations';?>"><?php echo 'Nirvana' ?></a> &amp;
-	<a target="_blank" href="<?php echo 'http://wordpress.org/'; ?>" title="<?php _e('Semantic Personal Publishing Platform', 'nirvana'); ?>"> <?php printf(' %s.', 'WordPress' ); ?></a></em>
+	<?php _e('Powered by','nirvana')?> <a target="_blank" href="<?php echo '//www.cryoutcreations.eu';?>" title="<?php echo 'Nirvana Theme by '. 'Cryout Creations';?>"><?php echo 'Nirvana' ?></a> &amp;
+	<a target="_blank" href="<?php echo '//wordpress.org/'; ?>" title="<?php _e('Semantic Personal Publishing Platform', 'nirvana'); ?>"> <?php printf(' %s.', 'WordPress' ); ?></a></em>
 	<?php } // nirvana_site_info()
 add_action('cryout_footer_hook','nirvana_site_info',15);
 

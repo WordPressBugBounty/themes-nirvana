@@ -1,55 +1,40 @@
 /*Source Sans Pro*/
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('sourcesanspro-semibold-webfont.eot');
-    src: url('sourcesanspro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-semibold-webfont.woff') format('woff'),
-         url('sourcesanspro-semibold-webfont.ttf') format('truetype'),
-         url('sourcesanspro-semibold-webfont.svg#source_sans_prosemibold') format('svg');
+    src: url('sourcesanspro-semibold-webfont.woff') format('woff'),
+         url('sourcesanspro-semibold-webfont.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('sourcesanspro-bold-webfont.eot');
-    src: url('sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-bold-webfont.woff') format('woff'),
-         url('sourcesanspro-bold-webfont.ttf') format('truetype'),
-         url('sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+    src: url('sourcesanspro-bold-webfont.woff') format('woff'),
+         url('sourcesanspro-bold-webfont.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('sourcesanspro-extralight-webfont.eot');
-    src: url('sourcesanspro-extralight-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-extralight-webfont.woff') format('woff'),
-         url('sourcesanspro-extralight-webfont.ttf') format('truetype'),
-         url('sourcesanspro-extralight-webfont.svg#source_sans_proextralight') format('svg');
+    src: url('sourcesanspro-extralight-webfont.woff') format('woff'),
+         url('sourcesanspro-extralight-webfont.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('sourcesanspro-light-webfont.eot');
-    src: url('sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-light-webfont.woff') format('woff'),
-         url('sourcesanspro-light-webfont.ttf') format('truetype'),
-         url('sourcesanspro-light-webfont.svg#source_sans_prolight') format('svg');
+    src: url('sourcesanspro-light-webfont.woff') format('woff'),
+         url('sourcesanspro-light-webfont.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('sourcesanspro-regular-webfont.eot');
-    src: url('sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-regular-webfont.woff') format('woff'),
-         url('sourcesanspro-regular-webfont.ttf') format('truetype'),
-         url('sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+    src: url('sourcesanspro-regular-webfont.woff') format('woff'),
+         url('sourcesanspro-regular-webfont.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -59,55 +44,40 @@
 /* Open Sans */
 @font-face {
     font-family: 'Open Sans';
-    src: url('opensans-light-webfont.eot');
-    src: url('opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('opensans-light-webfont.woff') format('woff'),
-         url('opensans-light-webfont.ttf') format('truetype'),
-         url('opensans-light-webfont.svg#open_sanslight') format('svg');
+    src: url('opensans-light-webfont.woff') format('woff'),
+         url('opensans-light-webfont.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('opensans-regular-webfont.eot');
-    src: url('opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('opensans-regular-webfont.woff') format('woff'),
-         url('opensans-regular-webfont.ttf') format('truetype'),
-         url('opensans-regular-webfont.svg#open_sansregular') format('svg');
+    src: url('opensans-regular-webfont.woff') format('woff'),
+         url('opensans-regular-webfont.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('opensans-extrabold-webfont.eot');
-    src: url('opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('opensans-extrabold-webfont.woff') format('woff'),
-         url('opensans-extrabold-webfont.ttf') format('truetype'),
-         url('opensans-extrabold-webfont.svg#open_sansextrabold') format('svg');
+    src: url('opensans-extrabold-webfont.woff') format('woff'),
+         url('opensans-extrabold-webfont.ttf') format('truetype');
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('opensans-semibold-webfont.eot');
-    src: url('opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('opensans-semibold-webfont.woff') format('woff'),
-         url('opensans-semibold-webfont.ttf') format('truetype'),
-         url('opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+    src: url('opensans-semibold-webfont.woff') format('woff'),
+         url('opensans-semibold-webfont.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('opensans-bold-webfont.eot');
-    src: url('opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('opensans-bold-webfont.woff') format('woff'),
-         url('opensans-bold-webfont.ttf') format('truetype'),
-         url('opensans-bold-webfont.svg#open_sansbold') format('svg');
+    src: url('opensans-bold-webfont.woff') format('woff'),
+         url('opensans-bold-webfont.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -116,55 +86,40 @@
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('ubuntu-b-webfont.eot');
-    src: url('ubuntu-b-webfont.eot?#iefix') format('embedded-opentype'),
-         url('ubuntu-b-webfont.woff') format('woff'),
-         url('ubuntu-b-webfont.ttf') format('truetype'),
-         url('ubuntu-b-webfont.svg#ubuntubold') format('svg');
+    src: url('ubuntu-b-webfont.woff') format('woff'),
+         url('ubuntu-b-webfont.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('ubuntu-r-webfont.eot');
-    src: url('ubuntu-r-webfont.eot?#iefix') format('embedded-opentype'),
-         url('ubuntu-r-webfont.woff') format('woff'),
-         url('ubuntu-r-webfont.ttf') format('truetype'),
-         url('ubuntu-r-webfont.svg#ubunturegular') format('svg');
+    src: url('ubuntu-r-webfont.woff') format('woff'),
+         url('ubuntu-r-webfont.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('ubuntu-l-webfont.eot');
-    src: url('ubuntu-l-webfont.eot?#iefix') format('embedded-opentype'),
-         url('ubuntu-l-webfont.woff') format('woff'),
-         url('ubuntu-l-webfont.ttf') format('truetype'),
-         url('ubuntu-l-webfont.svg#ubuntulight') format('svg');
+    src: url('ubuntu-l-webfont.woff') format('woff'),
+         url('ubuntu-l-webfont.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Ubuntu';
-    src: url('ubuntu-m-webfont.eot');
-    src: url('ubuntu-m-webfont.eot?#iefix') format('embedded-opentype'),
-         url('ubuntu-m-webfont.woff') format('woff'),
-         url('ubuntu-m-webfont.ttf') format('truetype'),
-         url('ubuntu-m-webfont.svg#ubuntumedium') format('svg');
+    src: url('ubuntu-m-webfont.woff') format('woff'),
+         url('ubuntu-m-webfont.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Ubuntu Condensed';
-    src: url('ubuntu-c-webfont.eot');
-    src: url('ubuntu-c-webfont.eot?#iefix') format('embedded-opentype'),
-         url('ubuntu-c-webfont.woff') format('woff'),
-         url('ubuntu-c-webfont.ttf') format('truetype'),
-         url('ubuntu-c-webfont.svg#ubuntu_condensedregular') format('svg');
+    src: url('ubuntu-c-webfont.woff') format('woff'),
+         url('ubuntu-c-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -172,55 +127,40 @@
 /* Other fonts */
 @font-face {
     font-family: 'Droid Sans';
-    src: url('DroidSans-webfont.eot');
-    src: url('DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
-         url('DroidSans-webfont.woff') format('woff'),
-         url('DroidSans-webfont.ttf') format('truetype'),
-         url('DroidSans-webfont.svg#droid_sansregular') format('svg');
+    src: url('DroidSans-webfont.woff') format('woff'),
+         url('DroidSans-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Yanone Kaffeesatz Regular';
-    src: url('yanonekaffeesatz-regular-webfont.eot');
-    src: url('yanonekaffeesatz-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('yanonekaffeesatz-regular-webfont.woff') format('woff'),
-         url('yanonekaffeesatz-regular-webfont.ttf') format('truetype'),
-         url('yanonekaffeesatz-regular-webfont.svg#yanone_kaffeesatzregular') format('svg');
+    src: url('yanonekaffeesatz-regular-webfont.woff') format('woff'),
+         url('yanonekaffeesatz-regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Yanone Kaffeesatz Light';
-    src: url('yanonekaffeesatz-light-webfont.eot');
-    src: url('yanonekaffeesatz-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('yanonekaffeesatz-light-webfont.woff') format('woff'),
-         url('yanonekaffeesatz-light-webfont.ttf') format('truetype'),
-         url('yanonekaffeesatz-light-webfont.svg#yanone_kaffeesatzlight') format('svg');
+    src: url('yanonekaffeesatz-light-webfont.woff') format('woff'),
+         url('yanonekaffeesatz-light-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Oswald Light';
-    src: url('Oswald-Light-webfont.eot');
-    src: url('Oswald-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Oswald-Light-webfont.woff') format('woff'),
-         url('Oswald-Light-webfont.ttf') format('truetype'),
-         url('Oswald-Light-webfont.svg#OswaldLight') format('svg');
+    src: url('Oswald-Light-webfont.woff') format('woff'),
+         url('Oswald-Light-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Oswald';
-    src: url('Oswald-Regular-webfont.eot');
-    src: url('Oswald-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Oswald-Regular-webfont.woff') format('woff'),
-         url('Oswald-Regular-webfont.ttf') format('truetype'),
-         url('Oswald-Regular-webfont.svg#OswaldBook') format('svg');
+    src: url('Oswald-Regular-webfont.woff') format('woff'),
+         url('Oswald-Regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -229,25 +169,11 @@
 /* ICON FONT - ELUSIVE */
 @font-face {
   font-family: 'elusive';
-  src: url('elusive.eot');
-  src: url('elusive.eot?#iefix') format('embedded-opentype'),
-       url('elusive.woff') format('woff'),
-       url('elusive.ttf') format('truetype'),
-       url('elusive.svg?#elusive') format('svg');
+  src: url('elusive.woff') format('woff'),
+       url('elusive.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'elusive';
-    src: url('../font/elusive.svg?#elusive') format('svg');
-  }
-}
-*/
  
  [class^="crycon-"]:before, [class*=" crycon-"]:before {
   font-family: "elusive";
@@ -405,3 +331,4 @@
 .crycon-edit-2:before { content: '\e862'; } 
 .crycon-block:before { content: '\e863'; } 
  
+/* FIN */

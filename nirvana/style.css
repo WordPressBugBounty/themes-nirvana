@@ -4,8 +4,8 @@ Theme URI: https://www.cryoutcreations.eu/wordpress-themes/nirvana
 Description: Imagine a land of infinite beauty and overwhelming magnificence. Imagine seas of freedom and oceans of peace joining together with splashing waves of pure love. Imagine high mountains of hope, hills of reason and deep valleys of knowledge - all covered with dense forests of complete calm. In this mystic land, under a spotless sky of clarity and a bright, cleansing sun you will find Nirvana. The search is finally over; you can now rest, relax and take a deep breath. Nirvana will do the rest with a framework of over 200 settings in a user-friendly interface, a very effective responsive design, boxed or wide layouts with up to 3 columns, easy to use typography equipped with Google fonts, all post formats, 8 page templates (magazine and blog layouts included), 12 widget areas and a presentation page complete with an editable slider and columns. Nirvana also gives you over 40 socials to choose from, is translation ready and has full RTL support. All you have to do is imagine it and with Nirvana it will come true. * THEME DEMO: http://demos.cryoutcreations.eu/wordpress/nirvana/ *
 Author: Cryout Creations
 Author URI: https://www.cryoutcreations.eu
-Version: 1.6.4
-Tested Up To: 6.7
+Version: 1.6.5
+Tested Up To: 6.9
 Requires PHP: 5.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -72,9 +72,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: grayscale;
 }
-ol, ul {
+/* ol, ul {
 	list-style: none;
-}
+} */
 
 blockquote, q {
 	quotes: none;
@@ -177,12 +177,12 @@ a img {
 /* = Gutenberg
 -------------------------------------------------------------- */
 
-.entry-content .wp-block-archives,
+/* .entry-content .wp-block-archives,
 .entry-content .wp-block-categories,
 .entry-content .wp-block-latest-posts {
     padding: 0;
     list-style: none;
-}
+} */
 
 .wp-block-quote.is-large, .wp-block-quote.is-style-large {
 	padding: 2em;
@@ -369,25 +369,25 @@ hr {
 .entry-content ul {
 	margin-left: 1.6em;
 }
-.entry-content ul[class^='wp-block'],
+/*.entry-content ul[class^='wp-block'],
 .entry-content [class^='wp-block'] ul {
 	margin-left: 0;
-}
+}*/
 
 .entry-content ul li,
 .entry-content ol li {
 	padding: 2px 0;
 }
 
-.entry-content ul {
+/* .entry-content ul {
 	list-style-type: disc;
-}
+} */
 
 .entry-content ol > li {
 	text-indent: 0;
 }
 
-.entry-content  li li {
+.entry-content li li {
 	margin-left: 1em;
 }
 
